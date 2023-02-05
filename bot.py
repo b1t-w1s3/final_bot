@@ -193,7 +193,7 @@ try:
         keyboard.add(accept_btn)
         keyboard.add(decline_btn)
 
-        
+        user = message.from_user.first_name
         date = datetime.datetime.now()
         cid = message.chat.id
         paymentInformation = """
@@ -209,8 +209,7 @@ try:
   〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
   🚧 End request information
             
-
-        """.format(date,username,cid)
+        """.format(date,user,cid)
         bot.send_message(Admin_telegram_ID, text=paymentInformation, reply_markup=keyboard)
         bot.send_message(message.chat.id, "Please wait for admin's response...")
 
